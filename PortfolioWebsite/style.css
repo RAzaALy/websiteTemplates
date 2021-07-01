@@ -1,0 +1,663 @@
+@import url("http://fonts.googleapis.com/css?family=Poppins:200,300,400,500,600,700,800,900&dispaly=swap");
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+html {
+  font-size: 62.5%;
+  scroll-behavior: smooth;
+}
+
+::selection {
+  background-color: #d98a4c;
+  color: #fff;
+}
+
+::-webkit-scrollbar {
+  width: 0.4rem;
+  height: 100%;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: #fff;
+}
+
+::-webkit-scrollbar-track {
+  background-color: #17222a;
+}
+
+
+
+img,
+a,
+input {
+  user-select: none;
+}
+
+.toggle {
+  position: fixed;
+  top: 5rem;
+  right: 3rem;
+  width: 2.5rem;
+  height: 2.5rem;
+  padding: 1rem;
+  background: url("images/menu.png");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  filter: invert(1);
+  cursor: pointer;
+  z-index: 1000;
+}
+
+.toggle.active {
+  background: url("images/close.png");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  filter: invert(1);
+  cursor: pointer;
+}
+
+section {
+  padding: 10rem;
+  min-height: 100vh;
+}
+
+.banner {
+  position: relative;
+  width: 100%;
+  width: 100%;
+}
+
+.banner .imgSlideBar {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 35rem;
+  height: 100%;
+}
+
+.banner .imgSlideBar img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.banner .contentBx,
+.slideBar {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: calc(100% - 35rem);
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 6rem;
+}
+
+.banner .contentBx .logoText {
+  position: absolute;
+  top: 5rem;
+  left: 10rem;
+  font-size: 1.6rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1rem;
+  background-color: #333;
+  color: #fff;
+  padding: 0 0.5rem;
+}
+
+.banner .contentBx h4 {
+  font-size: 1.6rem;
+  color: #333;
+  font-weight: 300;
+}
+
+.banner .contentBx h4 span {
+  color: #00bcd4;
+  font-size: 3rem;
+  font-weight: 700;
+}
+
+.banner .contentBx h2 {
+  font-size: 4rem;
+  color: #333;
+  line-height: 5rem;
+  font-weight: 550;
+}
+
+.banner .contentBx p {
+  font-size: 1.2rem;
+  margin: 2rem 0;
+  font-weight: 300;
+}
+
+.banner .contentBx .btn {
+  background-color: #00bcd4;
+  color: #fff;
+  padding: 1rem 3rem;
+  display: inline-block;
+  text-decoration: none;
+  font-weight: 600;
+  letter-spacing: 0.2rem;
+  border-radius: 5rem;
+  text-transform: uppercase;
+  transition: 0.4s;
+}
+
+.banner .contentBx .btn:hover {
+  letter-spacing: 0.4rem;
+}
+
+.social {
+  position: absolute;
+  left: 10rem;
+  bottom: 2rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.social li {
+  list-style: none;
+  margin-right: 1rem;
+}
+
+.social li a {
+  text-decoration: none;
+}
+
+.social li a img {
+  transform: scale(0.5);
+  opacity: 0.7;
+}
+
+.social li a img:hover {
+  opacity: 1;
+  transform: scale(0.7);
+}
+
+.slideBar {
+  position: fixed;
+  right: -100%;
+  background-color: rgb(24, 31, 53);
+  opacity: .9;
+  padding: 4rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  z-index: 100;
+  transition: 0.3s;
+}
+
+.slideBar.active {
+  right: 0;
+}
+
+.menu {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  flex-direction: column;
+}
+
+.menu li {
+  list-style-type: none;
+  margin-bottom: 2rem;
+}
+
+.slideBar ul li a {
+  position: relative;
+  text-decoration: none;
+  color: #516574;
+
+  font-size: 2rem;
+  margin: 1rem 0;
+  font-weight: 300;
+  letter-spacing: 0.2rem;
+  text-transform: capitalize;
+  text-align: center;
+  transition: 250ms;
+}
+
+.slideBar ul li a.active {
+  color: #fff;
+}
+
+.fas,
+.fab,
+.fa {
+  color: #fff;
+}
+
+.slideBar ul li a::before {
+  content: "";
+  position: absolute;
+  bottom: -0.5rem;
+  left: 50%;
+  width: 0;
+  height: 0.2rem;
+  transform: translateX(-50%);
+  background-color: #fff;
+  transition: 250ms;
+}
+
+.slideBar ul li a:hover::before {
+  width: 100%;
+}
+
+.slideBar ul li a:hover {
+  color: #fff;
+}
+
+/* /// About Us  */
+
+.title {
+  width: 100%;
+  text-align: center;
+}
+
+.title h2 {
+  position: relative;
+  color: #d98a4c;
+  font-size: 2.5rem;
+  font-weight: 700;
+  letter-spacing: 0.1rem;
+}
+
+.title p {
+  margin: 0;
+  max-width: 70rem;
+  font-size: 1.2rem;
+  display: inline-block;
+  margin-top: 2rem;
+}
+
+.title h2::before {
+  content: "";
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  bottom: -0.1rem;
+  width: 6rem;
+  height: 0.2rem;
+  background-color: #d98a4c;
+}
+.title.white p,
+.title.white h2 {
+  color: #fff;
+}
+
+.about {
+  background-color: #17222a;
+}
+
+.about .content {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 4rem;
+}
+
+.about .content .textBx {
+  min-width: 49%;
+  width: 49%;
+  color: #fff;
+  font-size: 1.1rem;
+}
+
+.about .content .imgBx {
+  position: relative;
+  margin-left: 4rem;
+  width: 49%;
+}
+
+.about .content .imgBx img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  min-width: 49%;
+  width: 100%;
+  object-fit: cover;
+}
+
+/* // services */
+
+.service .content {
+  display: flex;
+  justify-content: center;
+  flex-direction: row;
+  flex-wrap: wrap;
+  margin-top: 2rem;
+}
+
+.service .content .serviceBx{
+  cursor: pointer;
+  padding: 4rem 2rem;
+  max-width: 34rem;
+  margin: 2rem;
+  transition: 0.2s;
+  text-align: center;
+  background-color: #f3f3f3;
+  box-shadow: 0 2rem 5rem rgba(0, 0, 0, 0.25);
+}
+
+.service .content .serviceBx:hover {
+  transform: scale(1.05);
+  background-color: #515966;
+}
+
+.service .content .serviceBx img {
+  max-width: 8rem;
+  transition: 0.5s;
+}
+
+.service .content .serviceBx:hover img {
+  filter: invert(1);
+  transform: scale(1.2);
+}
+
+.service .content .serviceBx h2 {
+  margin-top: 2rem;
+  margin-bottom: 1rem;
+  font-size: 2rem;
+  font-weight: 600;
+  transition: 0.5s;
+}
+
+.service .content .serviceBx:hover h2 {
+  color: #fff;
+}
+
+.service .content .serviceBx p {
+  margin: 0;
+  font-style: italic;
+}
+
+.service .content .serviceBx:hover p {
+  color: #fff;
+}
+
+/* Work  */
+
+.work {
+  padding: 5rem;
+}
+
+.work .content {
+  display: flex;
+  justify-content: center;
+  flex-direction: row;
+  flex-wrap: wrap;
+  margin-top: 4rem;
+}
+
+.work .content .workBx {
+  cursor: pointer;
+  position: relative;
+  width: 26.5rem;
+  height: 26.5rem;
+  margin: 1rem;
+  text-align: center;
+  transform: 0.5s;
+}
+
+.work .content .workBx .imgBx,
+.work .content .workBx .textBx {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.work .content .workBx .imgBx img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.work .content .workBx .textBx {
+  background-color: rgba(0, 0, 0, 0.25);
+  backdrop-filter: blur(1rem);
+  opacity: 0;
+  transition: 0.3s;
+}
+.work .content .workBx:hover .textBx {
+  opacity: 1;
+  color: #fff;
+}
+
+.work .content .workBx h3 {
+  color: #fff;
+  text-transform: uppercase;
+  letter-spacing: 0.1rem;
+  font-size: 1.6rem;
+  transition: 0.3s;
+  transition-delay: 0.3s;
+}
+
+.work .content .workBx:hover h3 {
+  transform: scale(1.4);
+}
+
+/* contact Us Form  */
+
+.contact {
+  background-color: #17222a;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.contact .contactForm {
+  position: relative;
+  width: 70rem;
+  margin-top: 2rem;
+}
+
+.contact .contactForm .row {
+  width: 100%;
+  display: flex;
+}
+
+.contact .contactForm .row .col50 {
+  width: 50%;
+  margin: 1rem;
+}
+
+.contact .contactForm .row .col100 {
+  width: 100%;
+  margin: 1rem;
+  text-align: center;
+}
+
+textarea,
+input {
+  outline: none;
+  border: none;
+  resize: none;
+}
+
+.row input,
+textarea {
+  width: 100%;
+  padding: 1rem;
+  background-color: #10171d;
+
+  color: #fff;
+  font-size: 1.6rem;
+}
+
+::placeholder {
+  color: #fff;
+  opacity: 0.7;
+}
+
+.contact .contactForm .row input[type="submit"] {
+  cursor: pointer;
+  max-width: 15rem;
+  width: 12rem;
+  border-radius: 5rem;
+  background-color: #0f151a;
+  transition: all 0.3s linear;
+}
+
+.contact .contactForm .row input[type="submit"]:hover {
+  letter-spacing: 0.2rem;
+  width: 20rem;
+}
+
+.copyright {
+  color: #fff;
+  background-color: rgb(24, 20, 20);
+  text-align: center;
+  padding: 1rem;
+  font-weight: bold;
+}
+
+.copyright p {
+  margin: 0;
+  font-size: 1.3rem;
+}
+
+.copyright p a {
+  text-decoration: none;
+  color: #e79453;
+}
+
+/* // responsiveness */
+
+@media (max-width: 991px) {
+  .banner .imgSlideBar {
+    display: none;
+  }
+
+  .banner .contentBx,
+  .slideBar {
+    width: 100%;
+    padding: 4rem;
+  }
+
+  .banner .contentBx .logoText {
+      top: 2rem;
+      left: 4rem;
+  }
+
+  .logoText .h4{
+      padding: 2rem 0;
+  }
+
+  .social {
+    left: 50%;
+    transform: translateX(-50%);
+  }
+
+  .toggle {
+    top: 2rem;
+    right: 1.5rem;
+  }
+
+  section {
+    padding: 4rem;
+  }
+
+  /* .about{
+      min-height: 140vh;
+  } */
+
+  .about .content{
+      flex-direction: column;
+      margin-top: 2rem;
+  }
+  .about .content  .textBx{
+      min-width: 100%;
+      width: 100%;
+      margin-bottom: 4rem;
+  }
+
+  .about .content .imgBx{
+      margin-left: 0;
+      max-height: 40rem;
+      height: 40rem;
+      width: 100%;
+      text-align: center;
+  }
+
+  .about .content .imgBx img{
+      max-height: 40rem;
+      height: 100%;
+      width: 100%;
+      object-fit: cover;
+  }
+
+  .service .content .serviceBx{
+      padding: 3rem 2rem;
+      max-width: 34rem;
+      margin: 1rem;
+  }
+
+  .contact{
+      padding: 2rem;
+  }
+
+  .contact .contactForm{
+      width: 100%;
+  }
+
+  .contactForm .row{
+      width: 100%;
+      display: flex;
+      flex-wrap: wrap;
+
+  }
+
+  .contact .contactForm .row .col50 {
+      width: 100%;
+  }
+
+
+}
+
+
+
+
+@media (max-width : 500px) {
+
+    html{
+        font-size: 58%;
+    }
+
+    .service{
+        padding: 4rem 1rem;
+    }
+
+    .about{
+        min-height: 110vh;
+    }
+
+    .service .content .serviceBx,
+    .work .content .workBx{
+        max-width: 100%;
+        width: 100%;
+        margin: 1rem 0;
+    }
+
+
+}
